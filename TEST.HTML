@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+ <ul id="user-list"></ul>
+
+
+
+    <script>
+        const data = [12, 5, 8, 130, 44, 9, 2, 2, 21, 56, 3, 99, 11, 28, 1, 65, 7, 38, 11, 50];
+
+    const users = [
+    { id: 1, name: "Kamal", age: 22, city: "Marrakech", score: 45 },
+    { id: 2, name: "Sami", age: 30, city: "Rabat", score: 72 },
+    { id: 3, name: "Issam", age: 28, city: "Marrakech", score: 60 },
+    { id: 4, name: "Oualid", age: 19, city: "Agadir", score: 33 },
+    { id: 5, name: "Hassan", age: 33, city: "Casablanca", score: 80 },
+    ];
+    const paire = data.filter(num => num%2==0) ;
+    console.log(paire) ;
+/*
+    const sup10 = data.filter(num => num > 10) ;
+    console.log(sup10) ;
+    for (i=sup[0] , i<= sup10.length , i++)
+    {
+
+    }
+    */
+        const list = document.querySelector("user-list") ;
+        const city = users.filter(city => city == "Marrakech") ;
+
+        const varr = document.createElement("li") ;
+
+     
+
+    </script>
+
+</body>
+</html>
