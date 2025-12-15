@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="app">
+  <h1 id="title">Liste des utilisateurs</h1>
+  <ul id="user-list">
+    <li class="user" data-id="1">Ahmed</li>
+    <li class="user" data-id="2">Kamal</li>
+    <li class="user" data-id="3">Chaimae</li>
+  </ul>
+  <input type="text" id="input-name" placeholder="Nom" />
+  <button id="add-btn">Ajouter</button>
+  <div id="info">
+    <p class="message">Bienvenue sur l'application DOM</p>
+  </div>
+  
+</div>
+<script>
+    let button  = document.querySelector("#add-btn") ;
+    
+    let user = document.querySelector("#user-list") ;
+
+    button.addEventListener("click", (e) => 
+    {
+        e.preventDefault() ;
+        let name  = document.querySelector("#input-name").value;
+        let added= document.createElement("li") ;
+        added.textContent =name;
+        let newId = user.children.length + 1;
+        added.dataset.id = newId;
+
+        user.appendChild(added) ;
+         let delbtn = document.createElement("button")  ;
+         delbtn.textContent = "delete"
+         added.appendChild(delbtn) ;
+         delbtn.addEventListener("click",(e) =>
+         {
+          e.preventDefault() ;
+          added.remove() ;
+
+         }) ;
+
+         let update  = document.createElement("button")
+         update.textContent="update" ;
+         added.appendChild(update);
+         update.addEventListener("click",(e) =>
+         {
+          e.preventDefault() ;
+          let newname = document.querySelector("#input-name").value;
+          added.firstChild.textContent=newname + "" ;
+         })
+        document.querySelector("#input-name").value = "";
+      
+
+      
+    }) ;
+</script>
+</body>
+</html>
